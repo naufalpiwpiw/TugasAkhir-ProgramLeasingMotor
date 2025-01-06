@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class akhir {
+public class Program {
     static ArrayList<String> namaP = new ArrayList<>();
     static ArrayList<String> nmrP = new ArrayList<>();
     static ArrayList<String> alamatP = new ArrayList<>();
