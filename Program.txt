@@ -15,7 +15,8 @@ public class akhir {
     static boolean isRunning = true;
     static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
-    static void showMenu() throws IOException {        System.out.println("\n============ MENU ============");
+    static void showMenu() throws IOException {        
+System.out.println("\n============ MENU ============");
         System.out.println("1. Isi Data");
         System.out.println("2. Lihat Laporan");
         System.out.println("3. Koreksi / Edit Data");
@@ -37,10 +38,9 @@ public class akhir {
                 deleteData();
                 break;
             case 5:
-                isRunning = false;               
-System.out.println("Program Selesai.");
+                isRunning = false;  System.out.println("Program Selesai.");
                 break;
-            default:                System.out.println("Pilihan tidak valid.");
+            default: System.out.println("Pilihan tidak valid.");
         }
     }
 
@@ -289,9 +289,11 @@ System.out.println("Program Selesai.");
             default: return "Tidak diketahui";
         }    }
 
-    public static void main(String[] args) throws IOException {   System.out.println("==============================");
+    public static void main(String[] args) throws IOException {   
+System.out.println("==============================");
     System.out.println("======= LEASING MOTOR ========");
-    System.out.println("== 0083-NAUFAL_NABIL_ARUFA ===");    System.out.println("==============================");
+    System.out.println("== 0083-NAUFAL_NABIL_ARUFA ===");    
+System.out.println("==============================");
         do {
             showMenu();
         } while (isRunning); }}
