@@ -1,5 +1,5 @@
 package tugas;
-
+//NAUFAL NABIL ARUFA
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -29,25 +29,19 @@ public class akhir {
 
         switch (Menu) {
             case 1:
-                insert();
-                break;
+                insert();break;
             case 2:
-                laporan();
-                break;
+                laporan();break;
             case 3:
-                editData();
-                break;
+                editData();break;
             case 4:
-                deleteData();
-                break;
+                deleteData();break;
             case 5:
                 isRunning = false;
                 System.out.println("Program Selesai.");
                 break;
-            default:
-                System.out.println("Pilihan tidak valid.");
-        }
-    }
+            default: System.out.println("Pilihan tidak valid.");
+        }    }
 
     static void alldata() {
     System.out.println("========= SEMUA DATA =========");
@@ -86,8 +80,6 @@ public class akhir {
             
             for (int i = halaman * dataPerHalaman; i < Math.min((halaman + 1) * dataPerHalaman, totalData); i++) {
                 double bunga=2.0*(tenor.get(i)/12.0);
-                
-
                 double totaltenor=cicilan.get(i)*tenor.get(i);
                 subtotharga += harga.get(i);
                 subtotdp += uangmuka.get(i);
@@ -127,8 +119,7 @@ public class akhir {
             ,totharga,totdp,totcicil,totbunga,totTcicil,totwaktu);
             System.out.printf("+----+----------------------------------------------------------------------------+----------------+---------------+------------------------------------------------------+\n");
             System.out.println("Data sudah Habis.");
-        }
-    }
+        }   }
 
     static void insert() throws IOException {
         boolean ulang = true;
@@ -159,8 +150,7 @@ public class akhir {
             double muka = Double.parseDouble(input.readLine());
             if (muka >= tunai) {
             System.out.println("Uang muka tidak boleh lebih besar atau sama dengan harga motor.");
-            continue;
-            }
+            continue;           }
             System.out.print("Masukkan Tenor (Bulan) : ");
             int tenorP = Integer.parseInt(input.readLine());
             double cicil = tenor(kode, tenorP, muka);
@@ -183,9 +173,7 @@ public class akhir {
             String choice = input.readLine().toLowerCase();
             if (!choice.equals("y")) {
                 ulang = false;
-            }
-        }
-    }
+            }       }    }
 
     static void editData() throws IOException {
         boolean ulang = true;
@@ -220,27 +208,22 @@ public class akhir {
             System.out.print("Masukkan Uang Muka(DP) Baru  : Rp.");
             double mukabaru=Double.parseDouble(input.readLine());
             uangmuka.set(index,mukabaru);
-
             System.out.print("Masukkan Tenor (Bulan) Baru  : ");
             int tenorP = Integer.parseInt(input.readLine());
             tenor.set(index, (double) tenorP);
-             double cicil = tenor(kode, tenorP, mukabaru);
-            
+             double cicil = tenor(kode, tenorP, mukabaru);         
             System.out.printf("Cicilan per Bulan            : Rp.%-8.2f\n",cicil);
             cicilan.set(index, cicil);
             double bunga=2.0*(tenorP/12.0);
             System.out.printf("Bunga yang diperoleh         : %-2.1f%%\n",bunga);
             System.out.println("Data berhasil di-edit.");
         } else {
-            System.out.println("Data tidak ditemukan.");
-        }
+            System.out.println("Data tidak ditemukan."); }
         System.out.print("Edit Data lagi? [y/t]: ");
             String choice = input.readLine().toLowerCase();
             if (!choice.equals("y")) {
                 ulang = false;
-            }
-        }
-    }
+            }       }    }
 
     static void deleteData() throws IOException {
         boolean ulang = true;
@@ -266,9 +249,7 @@ public class akhir {
             String choice = input.readLine().toLowerCase();
             if (!choice.equals("y")) {
                 ulang = false;
-            }
-        }
-    }
+            }    }    }
 
     static double harga(int kode) {
         switch (kode) {
@@ -280,22 +261,17 @@ public class akhir {
             case 6: return 24360000;
             case 7: return 28500000;
             default: return 0;
-        }
-    }
+        }    }
 
     static double tenor(int kode, int tenorP, double muka) {
     double hargaMotor = harga(kode); 
     double bunga = 0.02; 
-    
     double sisaPembayaran = hargaMotor - muka; 
-
     int durasiTenor = tenorP; 
     double totalBunga = sisaPembayaran * bunga * (durasiTenor / 12.0); 
     double totalPembayaran = sisaPembayaran + totalBunga; 
-
     return totalPembayaran / durasiTenor; }
      
-
     static String Motor(int kode) {
         switch (kode) {
             case 1: return "Honda Beat Street";
@@ -306,8 +282,7 @@ public class akhir {
             case 6: return "Honda Vario 125 CBS Plus";
             case 7: return "Honda Vario 160 CBS Plus";
             default: return "Tidak diketahui";
-        }
-    }
+        }    }
 
     public static void main(String[] args) throws IOException {
     System.out.println("==============================");
@@ -316,6 +291,4 @@ public class akhir {
     System.out.println("==============================");
         do {
             showMenu();
-        } while (isRunning);
-    }
-}
+        } while (isRunning);    }}
