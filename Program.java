@@ -131,7 +131,7 @@ public class Program {
             String alamat = input.readLine();
             System.out.print("Masukkan No. HP : ");
             String nmr = input.readLine();
-            System.out.println("Pilihan Motor yang Tersedia.)";
+            System.out.println("Pilihan Motor yang Tersedia."
                     + "\n1. Honda Beat Street"
                     + "\n2. Honda CBR 150 ABS"
                     + "\n3. Honda Genio CBS Plus"
